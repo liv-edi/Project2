@@ -1,5 +1,7 @@
 ## Project 2
 
+[Home](https://liv-edi.github.io/cit281/)
+
 In this project we used the CLI to create and use a git repository. We refactored our JS code from the Project 1 to practice using git and refactoring.
 
 Technologies used for this project:
