@@ -1,37 +1,102 @@
-## Welcome to GitHub Pages
+## Project 2
 
-You can use the [editor on GitHub](https://github.com/liv-edi/Project2/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+In this project we used the CLI to create and use a git repository. We refactored our JS code from the Project 1 to practice using git and refactoring.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Technologies used for this project:
+- VSCode
+- CLI
+- git
 
-### Markdown
+The purpose of this project was to gain experince using git through out CLI and VSCode, writing/ executing server side Node.js Javascript code, and practice refactoring.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+From doing this project I learned how to refactor my code to be simpler and more efficent when looking at it. I also learned how to create a .gitignore file.
 
-```markdown
-Syntax highlighted code block
+```
+/*
+    CIT 281 Project 1
+    Name: Olivia Edwards
+*/
 
-# Header 1
-## Header 2
-### Header 3
+// Returns a random number between min (inclusive) and max (exclusive)
+const getRandomInteger = function(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
-- Bulleted
-- List
+// Returns a single random lowercase letter from an array of the alphabet
+const getRandomLetter = function() {
+    let randomLetter = getRandomInteger(0, 27);
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    return alphabet[randomLetter];
+}
+//const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
-1. Numbered
-2. List
+//returns random string of lowercase letters 
+const getRandomString = function(minLength, maxLength) {
+    maxLength += 1;
+    let stringLength = getRandomInteger(minLength, maxLength);
+    let result = "";
+    for (let i = 0; i < stringLength; i++) {
+        result += getRandomLetter();
+    }
+    return result;
+}
 
-**Bold** and _Italic_ and `Code` text
+//takes a string of randomly arranged letters and returns them in ascending order
+const getSortedString = function(string) {
+  return (string.split("")).sort().join("");
+}
+//let result = "";
 
-[Link](url) and ![Image](src)
+//let lengthOfOutputString = getRandomInteger(5, 26);
+
+//for (let i = 0; i < lengthOfOutputString; i++) {
+  //result += getRandomLetter();
+//}
+
+console.log(getSortedString(getRandomString(10, 20)));
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+```
+/*
+    CIT 281 Project 1
+    Name: Olivia Edwards
+*/
 
-### Jekyll Themes
+// Returns a random number between min (inclusive) and max (exclusive)
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/liv-edi/Project2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+// Returns a single random lowercase letter from an array of the alphabet
+function getRandomLetter() {
+    let randomLetter = getRandomInteger(0, 27);
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+    return alphabet[randomLetter];
+}
+//const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
-### Support or Contact
+//returns random string of lowercase letters 
+function getRandomString(minLength, maxLength) {
+    maxLength += 1;
+    let stringLength = getRandomInteger(minLength, maxLength);
+    let result = "";
+    for (let i = 0; i < stringLength; i++) {
+        result += getRandomLetter();
+    }
+    return result;
+}
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+//takes a string of randomly arranged letters and returns them in ascending order
+function getSortedString(string) {
+  return (string.split("")).sort().join("");
+}
+//let result = "";
+
+//let lengthOfOutputString = getRandomInteger(5, 26);
+
+//for (let i = 0; i < lengthOfOutputString; i++) {
+  //result += getRandomLetter();
+//}
+
+console.log(getSortedString(getRandomString(10, 20)));
+```
